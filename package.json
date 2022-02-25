@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "powershell ./start.ps1",
+    "stop": "powershell ./stop.ps1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
