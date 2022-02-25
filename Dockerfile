@@ -26,4 +26,4 @@ COPY . ./
 EXPOSE 3000
 
 # Start the app, CMD is at "run time", RUN above is at "build time"
-CMD ["node", "index.js"]
+CMD ["npm", "run","dev"]
