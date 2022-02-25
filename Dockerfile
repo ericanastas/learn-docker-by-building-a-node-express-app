@@ -20,7 +20,9 @@ RUN npm install
 # Copy the rest of our files
 COPY . ./
 
-# Expose port 3000
+# The EXPOSE instruction informs Docker that the container listens 
+# on the specified network ports at runtime. 
+# EXPOSE does NOT make the ports of the container accessible to the host.
 EXPOSE 3000
 
 # Start the app, CMD is at "run time", RUN above is at "build time"
