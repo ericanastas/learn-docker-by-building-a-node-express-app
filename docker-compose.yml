@@ -5,4 +5,8 @@ services:
       - "3000:3000"
     environment:
       - "PORT=3000"
-      
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=mypass
