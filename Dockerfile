@@ -14,8 +14,14 @@ WORKDIR /app
 # if nothing changes at a layer docker just reuses the cached version
 COPY package.json .
 
+#This is an argument that is passed into docker file
+ARG NODE_ENV
+
 # Install dependencies 
-RUN npm install
+RUN if [ "$NODE_ENV" = "development" ]; \
+    then npm install; \
+    else npm install --only=production; \
+    fi
 
 # Copy the rest of our files
 COPY . ./
