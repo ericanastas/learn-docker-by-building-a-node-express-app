@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const postRouter = require("./routes/postRoutes");
+const userRouter = require("./routes/userRoutes");
 
 const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/?authSource=admin`;
 
@@ -28,5 +29,6 @@ app.get('/', (req, res) => {
 });
 
 app.use("/api/posts", postRouter);
+app.use("/api/users", userRouter);
 
 app.listen(port), () => console.log(`listening on port ${port}`);
