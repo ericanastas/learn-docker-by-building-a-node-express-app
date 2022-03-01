@@ -1,2 +1,1 @@
-docker rm node-app -f
-docker image rm node-app-image
+docker-compose down -v

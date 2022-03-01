@@ -29,4 +29,4 @@ ENV PORT 3000
 EXPOSE $PORT
 
 # Start the app, CMD is at "run time", RUN above is at "build time"
-CMD ["npm", "run","dev"]
+CMD ["node", "index.js"]
