@@ -6,11 +6,19 @@ const app = express();
 const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/?authSource=admin`;
 
 
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("Connected to mongo database"))
-    .catch((e) => console.log(e));
 
 
+const connectWithRetry = () => {
+    console.log("Attempting to connect to database...")
+    mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then(() => console.log("Connected to mongo database"))
+        .catch((e) => {
+            console.log(e);
+            setTimeout(connectWithRetry, 5000)
+        });
+}
+
+connectWithRetry();
 
 const port = process.env.PORT || 3000;
 
