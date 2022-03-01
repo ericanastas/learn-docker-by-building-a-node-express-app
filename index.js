@@ -1,9 +1,12 @@
+const { MONGO_HOST, MONGO_PASSWORD, MONGO_PORT, MONGO_USER } = require("./config/config")
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
+const mongoUrl = `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/?authSource=admin`;
 
-mongoose.connect("mongodb://root:mypass@mongo:27017/?authSource=admin")
+
+mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Connected to mongo database"))
     .catch((e) => console.log(e));
 
