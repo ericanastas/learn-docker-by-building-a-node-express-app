@@ -12,8 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-redis": "^6.1.1",
     "express": "^4.17.3",
-    "mongoose": "^6.2.4"
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.4",
+    "redis": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -29,6 +29,7 @@ exports.login = async (req, res) => {
 
 
 
+
     try {
         const { username, password } = req.body;
 
@@ -38,6 +39,8 @@ exports.login = async (req, res) => {
         let isCorrect = await bcrypt.compare(password, user.password);
 
         if (isCorrect) {
+            req.session.user = user;
+
             res.status(200).json({ status: "success" });
         }
         else {
