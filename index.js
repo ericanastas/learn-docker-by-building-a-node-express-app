@@ -44,7 +44,7 @@ app.use(
             resave: false,
             saveUninitialized: false,
             httpOnly: true,
-            maxAge: 30000
+            maxAge: 1.8e+6 //30 minutes
         }
     })
 );
