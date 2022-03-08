@@ -59,7 +59,7 @@ app.use(express.json());
 const port = process.env.PORT || 3000;
 
 app.get('/api', (req, res) => {
-    res.send("<h2>Hi there this is the API</h2>");
+    res.send("<h2>Hi there this is the API</h2><p>This is a change</p>");
     console.log("/api requested");
 });
 
