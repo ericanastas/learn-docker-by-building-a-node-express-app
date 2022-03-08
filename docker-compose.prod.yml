@@ -14,6 +14,13 @@ services:
       - MONGO_PASSWORD=${MONGO_PASSWORD}
       - SESSION_SECRET=${SESSION_SECRET}
     command: node index.js
+    deploy:
+      replicas: 8
+      restart_policy: 
+        condition: any
+      update_config:
+        parallelism: 2
+        delay: 15s
   mongo:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
