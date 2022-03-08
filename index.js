@@ -33,6 +33,8 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+app.enable("trust proxy");
+
 app.use(
     session({
         store: new RedisStore({ client: redisClient }),
