@@ -5,6 +5,7 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
   node-app:
+    image: ericanastas/node-app
     environment:
       - "PORT=3000"
     depends_on:
