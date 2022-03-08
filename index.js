@@ -54,8 +54,8 @@ app.use(express.json());
 
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-    res.send("<h2>Hi there</h2>");
+app.get('/api', (req, res) => {
+    res.send("<h2>Hi there this is the API</h2>");
 });
 
 app.use("/api/posts", postRouter);
